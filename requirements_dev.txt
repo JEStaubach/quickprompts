@@ -7,4 +7,4 @@ pytest-cookies==0.2.0
 watchdog==0.8.3
 alabaster==0.7.8
 asciimatics==1.6.0
-
+requests==2.10.0
