@@ -2,6 +2,7 @@
 import pytest
 from quickprompts import Util, SelectorViewModel
 
+
 # noinspection PyClassHasNoInit
 class TestExternal:
 
@@ -52,7 +53,7 @@ class TestMenuViewModel:
     def test_menu_view_model1(self):
         test_inputs = ['', '::']
         expected_value = {}
-        nav_test = [([],[],'')]
+        nav_test = [([], [], '')]
         for test_input in test_inputs:
             TestMenuViewModel.check_menu_model(test_input, expected_value)
             TestMenuViewModel.exercise_nav(test_input, nav_test)
