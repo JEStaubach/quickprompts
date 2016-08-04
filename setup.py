@@ -20,5 +20,5 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
         'Topic :: Software Development',
-    ],
+    ], requires=['asciimatics', 'requests']
 )
