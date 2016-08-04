@@ -1,0 +1,26 @@
+language: python
+
+python: 3.5
+env:
+  - TOXENV=py26
+  - TOXENV=py27
+  - TOXENV=py33
+  - TOXENV=py34
+  - TOXENV=py35
+
+install:
+  - pip install -U tox
+
+script:
+  - tox
+
+deploy:
+  provider: pypi
+  distributions: sdist
+  user: JEStaubach
+  password:
+    secure: PLEASE_REPLACE_ME
+  on:
+    tags: true
+    repo: JEStaubach/quickprompts
+    condition: $TOXENV == py27
