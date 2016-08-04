@@ -7,7 +7,9 @@ from asciimatics.scene import Scene
 from asciimatics.screen import Screen
 from asciimatics.exceptions import ResizeScreenError, StopApplication
 import sys
-import win32console
+
+if sys.platform == "win32":
+    import win32console
 
 
 class Selector(object):
