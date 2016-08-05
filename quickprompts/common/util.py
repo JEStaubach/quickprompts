@@ -1,6 +1,6 @@
 import requests
 
-class Util:
+class Util(object):
 
     # Properties
 
