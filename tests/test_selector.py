@@ -8,7 +8,7 @@ class TestExternal:
 
     @pytest.mark.webtest
     def test_retrieve_classifiers(self):
-        classifiers = Util.get_classifiers(test=True)
+        classifiers = Util.get_classifiers(test=True).decode('utf-8')
         assert('Development Status :: 5 - Production/Stable' in classifiers)
         assert('Framework :: Pytest' in classifiers)
         assert('License :: OSI Approved :: MIT License' in classifiers)

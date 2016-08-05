@@ -1,4 +1,4 @@
-from common import Util
+from .common import Util
 
 class SelectorViewModel(list):
 

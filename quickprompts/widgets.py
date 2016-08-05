@@ -8,7 +8,7 @@ from asciimatics.exceptions import StopApplication
 # from asciimatics.scene import Scene
 # from asciimatics.widgets import Widget
 # from asciimatics.exceptions import NextScene
-from common.util import Util
+from .common.util import Util
 
 
 # Initial data for the form

@@ -1,6 +1,6 @@
-from widgets import SelectorFrame
-from selector_view_model import SelectorViewModel
-from common import Util
+from .widgets import SelectorFrame
+from .selector_view_model import SelectorViewModel
+from .common import Util
 
 from asciimatics.event import KeyboardEvent
 from asciimatics.scene import Scene
@@ -37,7 +37,7 @@ class Selector(object):
             except ResizeScreenError as e:
                 self.last_scene = e.scene
             except Exception as e:
-                print 'Unhandled exception: ' + str(e)
+                print('Unhandled exception: ', str(e))
                 self._restore_window()
                 raise e
 
