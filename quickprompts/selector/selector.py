@@ -1,12 +1,13 @@
-from .widgets import SelectorFrame
-from .selector_view_model import SelectorViewModel
-from .common import Util
+import sys
 
 from asciimatics.event import KeyboardEvent
+from asciimatics.exceptions import ResizeScreenError, StopApplication
 from asciimatics.scene import Scene
 from asciimatics.screen import Screen
-from asciimatics.exceptions import ResizeScreenError, StopApplication
-import sys
+
+from quickprompts.common import Util
+from quickprompts.common.widgets import SelectorFrame
+from quickprompts.selector.selector_view_model import SelectorViewModel
 
 if sys.platform == "win32":
     import win32console

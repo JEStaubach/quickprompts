@@ -1,4 +1,4 @@
-from .common import Util
+from quickprompts.common import Util
 
 class SelectorViewModel(list):
 
