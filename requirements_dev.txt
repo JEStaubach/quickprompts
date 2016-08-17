@@ -5,4 +5,4 @@ cryptography==1.4
 watchdog==0.8.3
 alabaster==0.7.9
 asciimatics==1.6.0
-requests==2.11.0
+requests==2.11.1
