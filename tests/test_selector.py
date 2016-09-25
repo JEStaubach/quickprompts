@@ -1,6 +1,7 @@
 # noinspection PyPackageRequirements
 import pytest
-from quickprompts import Util, SelectorViewModel
+from quickprompts.common.util import Util
+from quickprompts.selector_view_model import SelectorViewModel
 
 # noinspection PyClassHasNoInit
 class TestExternal:

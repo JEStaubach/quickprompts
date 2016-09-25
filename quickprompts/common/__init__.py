@@ -1,1 +1,1 @@
-from util import Util
+from quickprompts.common.util import Util

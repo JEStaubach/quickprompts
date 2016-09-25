@@ -1,1 +1,1 @@
-import test_selector
+import tests.test_selector

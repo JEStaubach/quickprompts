@@ -1,6 +1,6 @@
-from common import Util
-from selector_view_model import SelectorViewModel
-from selector import Selector
+from quickprompts.common.util import Util
+from quickprompts.selector_view_model import SelectorViewModel
+from quickprompts.selector import Selector
 
 
 

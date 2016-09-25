@@ -17,7 +17,7 @@ class Util:
         if test:
             classifiers_url = 'https://testpypi.python.org/pypi?%3Aaction=list_classifiers'
         r = requests.get(classifiers_url)
-        return r.content
+        return r.content.decode()
 
     @staticmethod
     def str_ends_in_substr(searchstring, searchval):
