@@ -1,15 +1,22 @@
-# -*- coding: utf-8 -*-
-from .widgets import SelectorFrame
-from .selector_view_model import SelectorViewModel
-from .common.util import Util
+<<<<<<< HEAD:quickprompts/selector.py
+from quickprompts.widgets import SelectorFrame
+from quickprompts.selector_view_model import SelectorViewModel
+from quickprompts.common.util import Util
+=======
+import sys
+>>>>>>> pyup-update-asciimatics-1.6.0-to-1.7.0:quickprompts/selector/selector.py
 
 from asciimatics.event import KeyboardEvent
+from asciimatics.exceptions import ResizeScreenError, StopApplication
 from asciimatics.scene import Scene
 from asciimatics.screen import Screen
-from asciimatics.exceptions import ResizeScreenError, StopApplication
 
-import sys
-import win32console
+from quickprompts.common import Util
+from quickprompts.common.widgets import SelectorFrame
+from quickprompts.selector.selector_view_model import SelectorViewModel
+
+if sys.platform == "win32":
+    import win32console
 
 
 class Selector(object):
@@ -32,14 +39,16 @@ class Selector(object):
                 # save the console so if the program encounters
                 # a problem/exception we may be able to restore the console
                 self._save_window()
-                Screen.wrapper(self._start_app,
-                               catch_interrupt=False,
-                               arguments=[self.last_scene])
+                Screen.wrapper(self._start_app, catch_interrupt=False, arguments=[self.last_scene])
                 break
             except ResizeScreenError as e:
                 self.last_scene = e.scene
             except Exception as e:
+<<<<<<< HEAD:quickprompts/selector.py
                 print('Unhandled exception: ' + str(e))
+=======
+                print('Unhandled exception: ', str(e))
+>>>>>>> pyup-update-asciimatics-1.6.0-to-1.7.0:quickprompts/selector/selector.py
                 self._restore_window()
                 raise e
 
@@ -77,10 +86,7 @@ class Selector(object):
         ]
         self.scenes.append(Scene(self.effects, -1))
 
-        screen.play(self.scenes,
-                    stop_on_resize=True,
-                    start_scene=scene,
-                    unhandled_input=self.global_shortcuts)
+        screen.play(self.scenes, stop_on_resize=True, start_scene=scene, unhandled_input=self.global_shortcuts)
 
 
 if __name__ == '__main__':

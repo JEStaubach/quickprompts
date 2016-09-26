@@ -1,1 +1,1 @@
-from quickprompts.common.util import Util
+# -*- coding: utf-8 -*-
