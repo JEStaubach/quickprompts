@@ -143,7 +143,8 @@ class SelectorFrame(Frame):
     def _view(self):
         # Build result of this form and display it.
         self.save()
-        for key, value in self.data.items():
+        copy_data = dict(self.data)
+        for key, value in copy_data.items():
             if not value:
                 self.data.pop(key)
         message = "Values entered are:\n\n"

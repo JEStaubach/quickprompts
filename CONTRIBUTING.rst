@@ -1,3 +1,5 @@
+.. highlight:: shell
+
 ============
 Contributing
 ============
@@ -13,7 +15,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/JEstaubach/quickprompts/issues
+Report bugs at https://github.com/JEStaubach/quickprompts/issues.
 
 If you are reporting a bug, please include:
 
@@ -25,7 +27,7 @@ Fix Bugs
 ~~~~~~~~
 
 Look through the GitHub issues for bugs. Anything tagged with "bug"
-and "help wanted" is open to whoever wants to implement a fix for it.
+and "help wanted" is open to whoever wants to implement it.
 
 Implement Features
 ~~~~~~~~~~~~~~~~~~
@@ -36,15 +38,16 @@ and "help wanted" is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-Every package could always use more documentation, whether as part of the
-official docs, in docstrings, or even on the web in blog posts, articles, and such.
+quickprompts could always use more documentation, whether as part of the
+official quickprompts docs, in docstrings, or even on the web in blog posts,
+articles, and such.
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
 The best way to send feedback is to file an issue at https://github.com/JEStaubach/quickprompts/issues.
 
-If you are proposing a new feature:
+If you are proposing a feature:
 
 * Explain in detail how it would work.
 * Keep the scope as narrow as possible, to make it easier to implement.
@@ -56,7 +59,38 @@ Get Started!
 
 Ready to contribute? Here's how to set up `quickprompts` for local development.
 
-Todo: Describe here
+1. Fork the `quickprompts` repo on GitHub.
+2. Clone your fork locally::
+
+    $ git clone git@github.com:your_name_here/quickprompts.git
+
+3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
+
+    $ mkvirtualenv quickprompts
+    $ cd quickprompts/
+    $ python setup.py develop
+
+4. Create a branch for local development::
+
+    $ git checkout -b name-of-your-bugfix-or-feature
+
+   Now you can make your changes locally.
+
+5. When you're done making changes, check that your changes pass flake8 and the tests, including testing other Python versions with tox::
+
+    $ flake8 quickprompts tests
+    $ python setup.py test or py.test
+    $ tox
+
+   To get flake8 and tox, just pip install them into your virtualenv.
+
+6. Commit your changes and push your branch to GitHub::
+
+    $ git add .
+    $ git commit -m "Your detailed description of your changes."
+    $ git push origin name-of-your-bugfix-or-feature
+
+7. Submit a pull request through the GitHub website.
 
 Pull Request Guidelines
 -----------------------
@@ -64,42 +98,17 @@ Pull Request Guidelines
 Before you submit a pull request, check that it meets these guidelines:
 
 1. The pull request should include tests.
-
 2. If the pull request adds functionality, the docs should be updated. Put
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
-
 3. The pull request should work for Python 2.6, 2.7, 3.3, 3.4 and 3.5, and for PyPy. Check
    https://travis-ci.org/JEStaubach/quickprompts/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
-Add a New Test
----------------
-When fixing a bug or adding features, it's good practice to add a test to demonstrate your
-fix or new feature behaves as expected. These tests should focus on one tiny bit of functionality
-and prove changes are correct.
+Tips
+----
 
-To write and run your new test, follow these steps:
+To run a subset of tests::
 
-1. Add the new test to `tests/`. Focus your test on the specific bug or a small part of the new feature.
-
-2. If you have already made changes to the code, stash your changes and confirm all your changes were stashed::
-
-    $ git stash
-    $ git stash list
-
-3. Run your test and confirm that your test fails. If your test does not fail, rewrite the test until it fails on the original code::
-
-    $ py.test ./tests
-
-4. (Optional) Run the tests with tox to ensure that the code changes work with different Python versions::
-
-    $ tox
-
-5. Proceed work on your bug fix or new feature or restore your changes. To restore your stashed changes and confirm their restoration::
-
-    $ git stash pop
-    $ git stash list
-
-6. Rerun your test and confirm that your test passes. If it passes, congratulations!
+$ py.test tests.test_quickprompts
 
