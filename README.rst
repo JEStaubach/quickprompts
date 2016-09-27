@@ -13,10 +13,9 @@ quickprompts
         :target: https://quickprompts.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/JEStaubach/quickprompts/shield.svg
-     :target: https://pyup.io/repos/github/JEStaubach/quickprompts/
-     :alt: Updates
-
+.. image:: https://pyup.io/repos/github/jestaubach/quickprompts/shield.svg
+        :target: https://pyup.io/repos/github/jestaubach/quickprompts/
+        :alt: Updates
 
 A utility for common tasks of prompting users for data.
 
