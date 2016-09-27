@@ -11,17 +11,18 @@ env:
   - TOXENV=py27-linux
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -U tox
+install: 
+  - pip install -U tox
+  - pip install codecov
+  - pip install pytest-cov
 
 # command to run tests, e.g. python setup.py test
-script: tox -e ${TOXENV}
-
-before_install: 
-  - pip install pytest-cov
-  - pip install coveralls
+script: 
+  - tox -e ${TOXENV}
+  - pytest-cov --cov=quickprompts --cov-report term-missing tests/
 
 after_success: 
-  - coveralls
+  - codecov
 
 # After you create the Github repo and add it to Travis, run the
 # travis_pypi_setup.py script to finish PyPI deployment setup
