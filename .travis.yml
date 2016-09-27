@@ -5,10 +5,10 @@ language: python
 python: 3.5
 
 env:
-  - TOXENV=py35
-  - TOXENV=py34
-  - TOXENV=py33
-  - TOXENV=py27
+  - TOXENV=py35-linux
+  - TOXENV=py34-linux
+  - TOXENV=py33-linux
+  - TOXENV=py27-linux
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -U tox
@@ -27,4 +27,4 @@ deploy:
   on:
     tags: true
     repo: JEStaubach/quickprompts
-    condition: $TOXENV == py27
+    condition: $TOXENV == py27-linux

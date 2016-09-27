@@ -4,28 +4,28 @@
 environment:
   matrix:
     - PYTHON: "C:\\Python27"
-      TOX_ENV: "py27"
+      TOX_ENV: "py27-win"
 
     - PYTHON: "C:\\Python27-x64"
-      TOX_ENV: "py27"
+      TOX_ENV: "py27-win"
 
     - PYTHON: "C:\\Python33"
-      TOX_ENV: "py33"
+      TOX_ENV: "py33-win"
 
     - PYTHON: "C:\\Python33-x64"
-      TOX_ENV: "py33"
+      TOX_ENV: "py33-win"
 
     - PYTHON: "C:\\Python34"
-      TOX_ENV: "py34"
+      TOX_ENV: "py34-win"
 
     - PYTHON: "C:\\Python34-x64"
-      TOX_ENV: "py34"
+      TOX_ENV: "py34-win"
 
     - PYTHON: "C:\\Python35"
-      TOX_ENV: "py35"
+      TOX_ENV: "py35-win"
 
     - PYTHON: "C:\\Python35-x64"
-      TOX_ENV: "py35"
+      TOX_ENV: "py35-win"
 
 init:
   - set PATH=%PYTHON%;%PYTHON%\Scripts;C:\MinGW\msys\1.0\bin;%PATH%
@@ -37,7 +37,6 @@ install:
   - "%PYTHON%/Scripts/easy_install -U pip"
   - "%PYTHON%/Scripts/pip install tox"
   - "%PYTHON%/Scripts/pip install wheel"
-  - "%PYTHON%/Scripts/pip install pypiwin32"
 
 build: false  # Not a C# project, build stuff at the test step instead.
 
