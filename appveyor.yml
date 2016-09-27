@@ -37,7 +37,7 @@ install:
   - "%PYTHON%/Scripts/easy_install -U pip"
   - "%PYTHON%/Scripts/pip install tox"
   - "%PYTHON%/Scripts/pip install wheel"
-  - "python.exe -m pip install pypiwin32"
+  - "%PYTHON%/python -m pip install pypiwin32"
 
 build: false  # Not a C# project, build stuff at the test step instead.
 
