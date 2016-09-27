@@ -1,14 +1,12 @@
+# -*- coding: utf-8 -*-
 from asciimatics.event import KeyboardEvent
 from asciimatics.event import MouseEvent
-from asciimatics.widgets import Frame, Layout, Label, Divider, CheckBox, Button, PopUpDialog
+from asciimatics.widgets import Frame, Layout, Label, Divider
+from asciimatics.widgets import CheckBox, Button, PopUpDialog
 from asciimatics.screen import Screen
 from asciimatics.exceptions import StopApplication
-# from asciimatics.exceptions import ResizeScreenError
-# from asciimatics.widgets import TextBox, Text, RadioButtons
-# from asciimatics.scene import Scene
-# from asciimatics.widgets import Widget
-# from asciimatics.exceptions import NextScene
-from quickprompts.common.util import Util
+
+from .common.util import Util
 
 
 # Initial data for the form
@@ -40,7 +38,9 @@ class SelectorFrame(Frame):
     # Public Methods
 
     def set_title(self, new_title):
-        self._title = ' ' + new_title[0:self._canvas.width - 4] + ' ' if new_title else ''
+        self._title = ''
+        if new_title:
+            self._title = ' ' + new_title[0:self._canvas.width - 4] + ' '
 
     # Private Methods
 
@@ -55,11 +55,16 @@ class SelectorFrame(Frame):
         self._place_widgets()
         if item_stepped_out_of:
             for layout in self.layouts:
-                for column_index in range(len(layout.columns)):
-                    for widget_index in range(len(layout.columns[column_index])):
-                        if layout.columns[column_index][widget_index].name:
-                            if layout.columns[column_index][widget_index].name[:-2].strip() == item_stepped_out_of:
-                                self.switch_focus(layout, column_index, widget_index)
+                num_cols = len(layout.columns)
+                for column_index in range(num_cols):
+                    col = layout.columns[column_index]
+                    for widget_index in range(len(col)):
+                        wdgt_name = col[widget_index].name
+                        if wdgt_name:
+                            if wdgt_name[:-2].strip() == item_stepped_out_of:
+                                self.switch_focus(layout,
+                                                  column_index,
+                                                  widget_index)
 
     def _descend(self, item_text):
         self._menu_view_model.step_into_item(item_text)
@@ -84,7 +89,8 @@ class SelectorFrame(Frame):
     def _place_widgets(self):
         self.set_title('Trove Classifiers')
         if self._menu_view_model.bread_crumbs:
-            self.set_title('Trove Classifiers: ' + '::'.join(self._menu_view_model.bread_crumbs))
+            bread_trail = '::'.join(self._menu_view_model.bread_crumbs)
+            self.set_title('Trove Classifiers: ' + bread_trail)
 
         layout = SelectorLayout([4, 27], on_left_arrow=self._ascend)
         self.add_layout(layout)
@@ -95,14 +101,21 @@ class SelectorFrame(Frame):
             layout.add_widget(BackButton('<<< ..', self._ascend), 1)
             display_overhead = 5
         layout.add_widget(Label(" Options:"), 0)
-        name_base = '::'.join(self._menu_view_model.bread_crumbs) + '::' if self._menu_view_model.bread_crumbs else ''
+        name_base = ''
+        if self._menu_view_model.bread_crumbs:
+            name_base = '::'.join(self._menu_view_model.bread_crumbs) + '::'
         for option in self._menu_view_model:
             if Util.str_ends_in_substr(option, ' >>'):
                 layout.add_widget(ArrowButton(option, self._descend), 1)
             else:
                 layout.add_widget(
-                    RightSelectCheckBox(option, name=name_base + option, on_change=self._on_change), 1)
-        for i in range(self._screen.height - len(self._menu_view_model) - display_overhead):
+                    RightSelectCheckBox(option,
+                                        name=name_base + option,
+                                        on_change=self._on_change),
+                    1)
+        for i in range(self._screen.height -
+                       len(self._menu_view_model) -
+                       display_overhead):
             layout.add_widget(Label(""), 1)
         layout2 = SelectorLayout([1, 1, 1])
         self.add_layout(layout2)

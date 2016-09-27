@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 import requests
+
 
 class Util:
 
@@ -13,9 +15,9 @@ class Util:
 
     @staticmethod
     def get_classifiers(test=False):
-        classifiers_url = 'https://pypi.python.org/pypi?%3Aaction=list_classifiers'
+        classifiers_url = 'https://pypi.python.org/pypi?%3Aaction=list_classifiers'  # noqa
         if test:
-            classifiers_url = 'https://testpypi.python.org/pypi?%3Aaction=list_classifiers'
+            classifiers_url = 'https://testpypi.python.org/pypi?%3Aaction=list_classifiers'  # noqa
         r = requests.get(classifiers_url)
         return r.content.decode()
 
