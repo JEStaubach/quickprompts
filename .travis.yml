@@ -20,7 +20,7 @@ install:
 # command to run tests, e.g. python setup.py test
 script: 
   - tox -e ${TOXENV}
-  - pytest-cov --cov=quickprompts --cov-report term-missing tests/
+  - py.test --cov=quickprompts --cov-report term-missing tests/
 
 after_success: 
   - codecov
