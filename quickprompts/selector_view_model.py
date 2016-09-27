@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from quickprompts.common.util import Util
+from .common.util import Util
 
 
 class SelectorViewModel(list):
