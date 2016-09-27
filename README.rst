@@ -6,6 +6,10 @@ quickprompts
 .. image:: https://img.shields.io/pypi/v/quickprompts.svg
         :target: https://pypi.python.org/pypi/quickprompts
 
+.. image:: https://ci.appveyor.com/api/projects/status/github/JEStaubach/quickprompts?branch=master
+    :target: https://ci.appveyor.com/project/JEStaubach/quickprompts/branch/master
+    :alt: Windows build status on Appveyor
+
 .. image:: https://img.shields.io/travis/JEStaubach/quickprompts.svg
         :target: https://travis-ci.org/JEStaubach/quickprompts
 
