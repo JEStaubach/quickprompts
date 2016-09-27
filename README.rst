@@ -21,6 +21,10 @@ quickprompts
         :target: https://pyup.io/repos/github/jestaubach/quickprompts/
         :alt: Updates
 
+.. image:: https://landscape.io/github/JEStaubach/quickprompts/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/JEStaubach/quickprompts/master
+   :alt: Code Health
+
 A utility for common tasks of prompting users for data.
 
 
