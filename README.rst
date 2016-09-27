@@ -7,8 +7,8 @@ quickprompts
         :target: https://pypi.python.org/pypi/quickprompts
 
 .. image:: https://ci.appveyor.com/api/projects/status/github/JEStaubach/quickprompts?branch=master
-    :target: https://ci.appveyor.com/project/JEStaubach/quickprompts/branch/master
-    :alt: Windows build status on Appveyor
+        :target: https://ci.appveyor.com/project/JEStaubach/quickprompts/branch/master
+        :alt: Windows build status on Appveyor
 
 .. image:: https://img.shields.io/travis/JEStaubach/quickprompts.svg
         :target: https://travis-ci.org/JEStaubach/quickprompts
@@ -22,8 +22,13 @@ quickprompts
         :alt: Updates
 
 .. image:: https://landscape.io/github/JEStaubach/quickprompts/master/landscape.svg?style=flat
-   :target: https://landscape.io/github/JEStaubach/quickprompts/master
-   :alt: Code Health
+        :target: https://landscape.io/github/JEStaubach/quickprompts/master
+        :alt: Code Health
+
+.. image:: https://coveralls.io/repos/github/JEStaubach/quickprompts/badge.svg
+        :target: https://coveralls.io/github/JEStaubach/quickprompts
+        :alt: Test Coverage
+
 
 A utility for common tasks of prompting users for data.
 
