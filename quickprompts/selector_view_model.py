@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-from .common.util import Util
-
+from quickprompts.common.util import Util
 
 class SelectorViewModel(list):
 
@@ -60,8 +58,7 @@ class SelectorViewModel(list):
                     d[sections[0]] = {}
                 else:
                     d[sections[0]] = {'': {}}
-            d[sections[0]] = SelectorViewModel._chomp(sections[1:],
-                                                      d[sections[0]])
+            d[sections[0]] = SelectorViewModel._chomp(sections[1:], d[sections[0]])
         return d
 
     def _format_options_list(self):
@@ -72,9 +69,7 @@ class SelectorViewModel(list):
             if self._get_children(options[option_text]):
                 option_index = options_text.index(option_text)
                 padding = self._get_padding(options_text, option_index)
-                formatted_options.append(option_text +
-                                         padding +
-                                         self._chldren_indicator)
+                formatted_options.append(option_text + padding + self._chldren_indicator)
             else:
                 formatted_options.append(option_text)
         return sorted(formatted_options)
@@ -91,9 +86,7 @@ class SelectorViewModel(list):
         page = self._model
         for crumb in self.bread_crumbs:
             if crumb not in page.keys():
-                raise ValueError(str(self.bread_crumbs) +
-                                 ' : path traversal failed at ' +
-                                 str(crumb))
+                raise ValueError(str(self.bread_crumbs) + ' : path traversal failed at ' + str(crumb))
             else:
                 page = page[crumb]
         return page

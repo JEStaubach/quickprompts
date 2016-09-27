@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 """
 test_quickprompts
 ----------------------------------
@@ -7,8 +8,12 @@ test_quickprompts
 Tests for `quickprompts` module.
 """
 
+import pytest
+
 from contextlib import contextmanager
 from click.testing import CliRunner
+
+from quickprompts import cli
 
 # noinspection PyPackageRequirements
 import pytest
