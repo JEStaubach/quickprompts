@@ -7,7 +7,7 @@ test_quickprompts
 Tests for `quickprompts` module.
 """
 from contextlib import contextmanager
-from click.testing import CliRunner
+#from click.testing import CliRunner
 
 from quickprompts import quickprompts
 
