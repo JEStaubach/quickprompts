@@ -27,8 +27,11 @@ quickprompts
 
 .. image:: https://coveralls.io/repos/github/JEStaubach/quickprompts/badge.svg
         :target: https://coveralls.io/github/JEStaubach/quickprompts
-        :alt: Test Coverage
+        :alt: Coveralls Test Coverage
 
+.. image:: https://codecov.io/gh/JEStaubach/quickprompts/branch/master/graph/badge.svg
+        :target: https://codecov.io/gh/JEStaubach/quickprompts
+        :alt: Codecov Test Coverage
 
 A utility for common tasks of prompting users for data.
 
