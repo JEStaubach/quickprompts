@@ -10,7 +10,7 @@ cryptography==1.5.2
 PyYAML==3.12
 pytest==3.0.2
 alabaster==0.7.9
-asciimatics==1.7.1
+asciimatics==1.8.0
 requests==2.11.1
 click==6.6
 pytest-cov==2.3.1
