@@ -14,4 +14,4 @@ asciimatics==1.9.0
 requests==2.18.4
 click==6.7
 pytest-cov==2.5.1
-coveralls==1.2.0
+coveralls==1.6.0
